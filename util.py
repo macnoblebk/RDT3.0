@@ -66,3 +66,6 @@ def make_packet(data_str, ack_num, seq_num):
 ###### Hence, your implementation should NOT make any changes to         ######
 ###### the above function names and args list.                           ######
 ###### You can have other helper functions if needed.                    ######  
+
+
+def extract_ack_seq(packet): return packet[11] & 0b1
