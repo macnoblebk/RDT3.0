@@ -41,3 +41,7 @@ class Receiver:
                 self.receiver_socket.sendto(response_packet, sender_socket)
 
             print("all done for this packet!\n")
+
+if __name__ == "__main__":
+    receiver = Receiver()
+    receiver.rdt_receive()
