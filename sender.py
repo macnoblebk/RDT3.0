@@ -1,5 +1,9 @@
 from socket import *
+from util import *
 
+RECEIVER_ADDRESS = ('', 10185)
+BUFFER_SIZE = 1024
+SLEEP_DURATION = 3
 class Sender:
   def __init__(self):
         """ 
@@ -9,6 +13,8 @@ class Sender:
         
         Please check the main.py for a reference of how your function will be called.
         """
+        self.seq_num = 0
+        self.packet_counter = 0
 
   def rdt_send(self, app_msg_str):
       """realibly send a message to the receiver (MUST-HAVE DO-NOT-CHANGE)
