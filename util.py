@@ -8,6 +8,21 @@ def create_checksum(packet_wo_checksum):
       the checksum in bytes
 
     """
+    checksum = 0
+    # Sum 16-bit words
+    for i in range(0, len(packet_wo_checksum), 2):
+        if i + 1 < len(packet_wo_checksum):
+            checksum += (packet_wo_checksum[i] << 8) + packet_wo_checksum[i + 1]
+
+    # Fold the carry
+    while checksum >> 16:
+        checksum = (checksum & 0xffff) + (checksum >> 16)
+
+    # Take one's complement
+    checksum = ~checksum & 0xffff
+
+    # Convert checksum to two bytes
+    return bytes([(checksum >> 8) & 0xFF, checksum & 0xFF])
 
 def verify_checksum(packet):
     """verify packet checksum (MUST-HAVE DO-NOT-CHANGE)
