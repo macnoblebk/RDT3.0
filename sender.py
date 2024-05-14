@@ -23,6 +23,10 @@ class Sender:
         app_msg_str: the message string (to be put in the data field of the packet)
 
       """
+      print(f"\noriginal message string: {app_msg_str}")
+      packet = make_packet(app_msg_str, 0, self.seq_num)
+      print(f"packet created: {packet}")
+      self.send_packet(packet, app_msg_str)
 
   ####### Your Sender class in sender.py MUST have the rdt_send(app_msg_str)  #######
   ####### function, which will be called by an application to                 #######
