@@ -7,14 +7,18 @@ ADDRESS = ('', 10185)
 SLEEP_DURATION = 5
 TIMEOUT_FREQUENCY = 6
 PACKET_CORRUPTION_FREQUENCY = 3
+
+
 class Receiver:
     def __init__(self):
+        """Initializes the Receiver class with a UDP socket and binds it to the address."""
         self.receiver_socket = socket(AF_INET, SOCK_DGRAM)
         self.receiver_socket.bind(ADDRESS)
         self.previous_seq_num = -1
         self.packet_counter = 0
 
     def rdt_receive(self):
+        """Receives packets, simulates packet loss and corruption, and sends acknowledgments back to the sender."""
         while True:
             packet, sender_socket = self.receiver_socket.recvfrom(BUFFER_SIZE)
             self.packet_counter += 1
@@ -41,6 +45,7 @@ class Receiver:
                 self.receiver_socket.sendto(response_packet, sender_socket)
 
             print("all done for this packet!\n")
+
 
 if __name__ == "__main__":
     receiver = Receiver()
