@@ -52,6 +52,14 @@ def make_packet(data_str, ack_num, seq_num):
 
     """
     # make sure your packet follows the required format!
+    header = b'COMPNETW'
+    msg = data_str.encode()
+    data_len = len(header + msg) + 4
+    length_flags = (data_len << 2) | (ack_num << 1) | seq_num  # Insert ack and seq
+    len_bytes = length_flags.to_bytes(2, byteorder='big')
+    check_sum = create_checksum(header + msg + len_bytes)
+    packet = header + check_sum + len_bytes + msg
+    return packet
 
 
 ###### These three functions will be automatically tested while grading. ######
