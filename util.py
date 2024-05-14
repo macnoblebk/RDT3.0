@@ -35,6 +35,9 @@ def verify_checksum(packet):
       False otherwise
 
     """
+    checksum = packet[8:10]  # Extract checksum from the packet
+    packet_wo_checksum = packet[:8] + packet[10:]
+    return create_checksum(packet_wo_checksum) == checksum
 
 def make_packet(data_str, ack_num, seq_num):
     """Make a packet (MUST-HAVE DO-NOT-CHANGE)
