@@ -1,5 +1,5 @@
 
-#Reliable Transport Protocol 3.0 Implementation
+# Reliable Transport Protocol 3.0
 
 ## Description
 Reliable Data Transfer 3.0, is a transport layer protocol implemented to ensure reliable and ordered delivery of data 
