@@ -22,7 +22,7 @@ application layer using UDP as the underlying transport service.
 - UDP  supports multiplexing/demultiplexing using port numbers 
 
 #### Packet Format
-![Packet format](Packet Format.png)
+![Packet format](Packet%20Format.png)
 
 ### Technologies and Skills
 - Programming Languages: Python
