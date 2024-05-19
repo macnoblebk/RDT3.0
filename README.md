@@ -50,6 +50,9 @@ errors and packet loss.
 additional security features.
 
 ### Future Enhancements:
-- Implement encryption for secure data transmission.
-- Add logging functionality for better monitoring and debugging.
-- Extend the system to support more advanced protocols and features.
+- Transitioning from a stop-and-wait protocol to a pipelined protocol
+- Adjustment of timeout management to handle multiple outstanding packets.
+- Implementation of selective retransmission based on acknowledgment information.
+- Introduction of a receiver window mechanism to regulate the flow of packets from the sender.
+- Implementation of a congestion window mechanism to adjust the transmission rate based on network conditions.
+- Enhancement of error detection and correction mechanisms to efficiently handle errors across multiple packets.
