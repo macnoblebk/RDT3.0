@@ -30,6 +30,10 @@ application layer using UDP as the underlying transport service.
 #### Finite State Machine - Sender 
 ![Sender FSM](Sender%20FSM.png)
 
+#### Program Output 
+![Screenshot of program output](Screenshot%20output(1).png) 
+![Screenshot of program output](Screenshot%20output(2).png)
+
 ### Technologies and Skills
 - Programming Languages: Python
 - Libraries/Modules: Socket programming
