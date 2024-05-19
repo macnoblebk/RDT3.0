@@ -24,6 +24,12 @@ application layer using UDP as the underlying transport service.
 #### Packet Format
 ![Packet format](Packet%20Format.png)
 
+#### Finite State Machine - Receiver
+![Receiver FSM](Receiver%20FSM.png)
+
+#### Finite State Machine - Sender 
+![Sender FSM](Sender%20FSM.png)
+
 ### Technologies and Skills
 - Programming Languages: Python
 - Libraries/Modules: Socket programming
